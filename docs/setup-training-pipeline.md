@@ -56,7 +56,7 @@ this moment.
 > As of today, a YAML Azure DevOps pipeline needs to have its first run before
 > you can set other properties, like *variables* and *triggers*.
 > 
-> You can either wait for the run to complete (it will fail) or you can cance
+> You can either wait for the run to complete (it will fail) or you can cancel
 > it right after it was triggered. Just use the **Cancel build** button on the
 > top right of the build page.
 
