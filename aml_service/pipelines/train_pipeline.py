@@ -1,3 +1,5 @@
+from attach_compute import get_compute
+from workspace import get_workspace
 import sys
 import os
 import time
@@ -6,8 +8,6 @@ from azureml.pipeline.core import Pipeline
 from azureml.pipeline.steps import DatabricksStep
 
 sys.path.append(os.path.abspath("./aml_service/experiment"))
-from workspace import get_workspace
-from attach_compute import get_compute
 
 
 def get_experiment_run_url(
@@ -54,11 +54,11 @@ def main():
         "DATABRICKS_COMPUTE_NAME_AML",
         None
     )
-    model_dir = os.environ.get("MODEL_DIR", '/dbfs/model')
-    model_name = os.environ.get("MODEL_NAME", 'local-model')
+    model_dir = os.environ.get("MODEL_DIR", 'dbfs:/model')
+    model_name = os.environ.get("MODEL_NAME", 'torchcnn')
 
-    model_file_name = "%s.pth" % (model_name)
-    model_path = os.path.join(model_dir, model_file_name)
+    path_components = model_dir.split("/", 1)
+    model_path = "/dbfs/" + path_components[1] + "/" + model_name + ".pth"
 
     print("The model path will be %s" % (model_path))
 
