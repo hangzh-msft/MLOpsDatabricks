@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  baseName: $[coalesce(variables['baseNameOverride'], 'mlopsdb')]
+  baseName: $[coalesce(variables['baseNameOverride'], 'ml-play')]
   location: $[coalesce(variables['locationOverride'], 'westus2')]
   azuresub: $[coalesce(variables['azuresubOverride'], 'davete02_TED')]
 
