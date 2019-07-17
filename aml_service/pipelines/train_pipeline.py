@@ -1,13 +1,11 @@
+import sys
+import os
 sys.path.append(os.path.abspath("./aml_service/experiment"))
 from attach_compute import get_compute
 from workspace import get_workspace
-import sys
-import os
 import time
 from azureml.pipeline.core import Pipeline
 from azureml.pipeline.steps import DatabricksStep
-
-
 
 def get_experiment_run_url(
     subscription_id,
