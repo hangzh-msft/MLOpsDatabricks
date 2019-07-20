@@ -10,9 +10,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  baseName: $[coalesce(variables['baseNameOverride'], 'hzmlops')]
+  baseName: $[coalesce(variables['baseNameOverride'], 'mlopshz')]
   location: $[coalesce(variables['locationOverride'], 'westus2')]
-  azuresub: $[coalesce(variables['azuresubOverride'], 'hzazuresub')]
+  azuresub: $[coalesce(variables['azuresubOverride'], 'armservice')]
 
 steps:
 - task: AzureResourceGroupDeployment@2
